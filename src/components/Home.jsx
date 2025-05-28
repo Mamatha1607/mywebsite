@@ -20,10 +20,10 @@ className="min-h-screen flex flex-col items-center justify-center text-center px
           wrapper="h1"
           speed={50}
           repeat={Infinity}
-          className="text-6xl md:text-8xl font-extrabold text-accent mb-10"
+          className="text-4xl md:text-8xl font-extrabold text-accent mb-10"
         />
 
-        <p className="text-3xl text-gray-700 dark:text-gray-300 max-w-4xl">
+        <p className="text-2xl text-gray-700 dark:text-gray-300 max-w-4xl">
           Building clean, tested, and scalable web applications with a focus on performance and insight-driven decisions.
         </p>
       </div>
