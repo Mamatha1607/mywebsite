@@ -10,7 +10,7 @@ import {
 function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-[#0B0C10]/90 backdrop-blur border-b-4 border-teal shadow-[0_0_30px_#45A29E]">
-      <div className="w-full flex justify-between items-center px-4 md:px-12 py-6 text-2xl md:text-3xl">
+      <div className="w-full flex justify-between items-center px-4 md:px-12 py-6 text-2xl md:text-2xl">
         
         {/* Logo on the absolute left */}
         <div className="flex items-center space-x-4">
@@ -19,7 +19,7 @@ function Navbar() {
               MI
             </span>
           </div>
-          <h1 className="text-4xl font-extrabold text-gray-800 dark:text-white tracking-wide">
+          <h1 className="text-2xl font-extrabold text-gray-800 dark:text-white tracking-wide">
            
           </h1>
         </div>
