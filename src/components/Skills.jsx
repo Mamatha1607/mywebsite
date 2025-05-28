@@ -30,27 +30,27 @@ function Skills() {
   ];
 
   const services = [
-    { icon: <FaCode className="text-3xl text-accent" />, text: 'Web Development' },
-    { icon: <FaChartLine className="text-3xl text-accent" />, text: 'Data Analysis' },
-    { icon: <FaBug className="text-3xl text-accent" />, text: 'Automation & Manual Testing' },
-    { icon: <FaCloud className="text-3xl text-accent" />, text: 'Cloud Deployment' },
-    { icon: <FaTools className="text-3xl text-accent" />, text: 'Full-Stack App Building' },
+    { icon: <FaCode className="text-xl text-accent" />, text: 'Web Development' },
+    { icon: <FaChartLine className="text-xl text-accent" />, text: 'Data Analysis' },
+    { icon: <FaBug className="text-xl text-accent" />, text: 'Automation & Manual Testing' },
+    { icon: <FaCloud className="text-xl text-accent" />, text: 'Cloud Deployment' },
+    { icon: <FaTools className="text-xl text-accent" />, text: 'Full-Stack App Building' },
   ];
 
   return (
     <section
       id="skills"
-      className="min-h-screen px-6 py-20 scroll-mt-32 bg-white dark:bg-[#0B0C10] text-gray-900 dark:text-white"
+      className="min-h-screen px-4 py-12 scroll-mt-32 bg-white dark:bg-[#0B0C10] text-gray-900 dark:text-white"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10">
         {/* Left: What I Can Do */}
-        <div className="md:w-5/12 space-y-8">
-          <h2 className="text-4xl font-bold text-accent mb-6">💼 What I Can Do</h2>
-          <div className="space-y-6">
+        <div className="md:w-5/12 space-y-6">
+          <h2 className="text-sm font-bold text-accent mb-4">💼 What I Can Do</h2>
+          <div className="space-y-4">
             {services.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 text-lg font-medium p-5 rounded-xl border border-accent bg-white dark:bg-base shadow hover:scale-105 transition-transform"
+                className="flex items-center gap-3 text-xs font-medium p-3 rounded-lg border border-accent bg-white dark:bg-base shadow hover:scale-105 transition-transform"
               >
                 {item.icon}
                 <TypeAnimation
@@ -58,7 +58,7 @@ function Skills() {
                   wrapper="span"
                   speed={50}
                   repeat={Infinity}
-                  className="text-xl text-gray-800 dark:text-gray-200"
+                  className="text-xs text-gray-800 dark:text-gray-200"
                 />
               </div>
             ))}
@@ -67,15 +67,15 @@ function Skills() {
 
         {/* Right: Skills Section */}
         <div className="md:w-7/12">
-          <h2 className="text-5xl font-bold text-accent mb-12 text-center md:text-left">🛠 Skills</h2>
-          <div className="grid gap-8 md:grid-cols-2">
+          <h2 className="text-lg font-bold text-accent mb-6 text-center md:text-left">🛠 Skills</h2>
+          <div className="grid gap-4 md:grid-cols-2">
             {skillGroups.map((group) => (
               <div
                 key={group.title}
-                className="p-6 rounded-2xl border-2 border-accent bg-gray-50 dark:bg-base shadow-lg hover:shadow-2xl transition-all"
+                className="p-4 rounded-xl border border-accent bg-gray-50 dark:bg-base shadow hover:shadow-md transition-all"
               >
-                <h3 className="text-2xl font-bold text-accent mb-4">{group.title}</h3>
-                <ul className="space-y-2 text-left text-lg text-gray-800 dark:text-gray-200">
+                <h3 className="text-sm font-bold text-accent mb-2">{group.title}</h3>
+                <ul className="space-y-1 text-left text-xs text-gray-800 dark:text-gray-200">
                   {group.items.map((skill) => (
                     <li key={skill}>• {skill}</li>
                   ))}

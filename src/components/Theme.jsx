@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function ThemeToggle() {
+function Theme() {
   const [theme, setTheme] = useState('dark');
   const [showLabel, setShowLabel] = useState(false);
 
@@ -24,7 +24,7 @@ function ThemeToggle() {
       {/* Neon Sky Blue Button */}
       <button
         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        className="bg-sky-400 text-black text-5xl w-24 h-24 rounded-full shadow-[0_0_40px_rgba(56,189,248,0.8)] hover:scale-110 transition-all duration-300"
+        className="bg-sky-400 text-black text-5xl w-14 h-14 rounded-full shadow-[0_0_40px_rgba(56,189,248,0.8)] hover:scale-110 transition-all duration-300"
         aria-label="Toggle Theme"
       >
         {theme === 'dark' ? '🌞' : '🌙'}
@@ -33,4 +33,4 @@ function ThemeToggle() {
   );
 }
 
-export default ThemeToggle;
+export default Theme;
