@@ -1,56 +1,61 @@
-import { FaCode, FaChartLine, FaBug, FaCloud, FaTools } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
+import { FaCode, FaChartLine, FaBug, FaCloud, FaTools } from 'react-icons/fa';
 
 function Skills() {
+  const services = [
+    { icon: <FaCode className="text-sm text-emerald-600" />, text: 'Web Development' },
+    { icon: <FaChartLine className="text-sm text-emerald-600" />, text: 'Data Analysis' },
+    { icon: <FaBug className="text-sm text-emerald-600" />, text: 'Testing & QA' },
+    { icon: <FaCloud className="text-sm text-emerald-600" />, text: 'Cloud Deployment' },
+    { icon: <FaTools className="text-sm text-emerald-600" />, text: 'Full-Stack App Building' },
+  ];
+
   const skillGroups = [
     {
       title: 'Programming Languages',
-      items: ['Java', 'Python', 'JavaScript', 'TypeScript', 'C/C++'],
+      items: ['Java', 'Python', 'JavaScript', 'C/C++', 'TypeScript', 'Go'],
     },
     {
-      title: 'Web Development',
-      items: ['HTML', 'CSS', 'React', 'AngularJS', 'Node.js', 'Spring Boot'],
+      title: 'Frontend Development',
+      items: ['AngularJS', 'Bootstrap', 'Vue.js', 'React.js', 'HTML', 'CSS'],
+    },
+    {
+      title: 'Backend Development',
+      items: ['Node.js', 'Express.js', 'REST APIs', 'JWT', 'Bcrypt', 'Spring Boot', 'Servlet/JSP'],
+    },
+    {
+      title: 'Data Analysis',
+      items: ['SQL', 'Pandas', 'NumPy', 'Data Visualization', 'EDA'],
     },
     {
       title: 'Testing & QA',
-      items: ['Selenium WebDriver', 'JUnit', 'TestNG', 'Postman', 'Test Automation', 'Manual Testing'],
+      items: ['CI/CD Testing', 'Selenium', 'JUnit', 'TestNG', 'Postman', 'Automation', 'Manual Testing'],
     },
     {
       title: 'DevOps & Tools',
-      items: ['Git', 'GitHub', 'GitHub Actions', 'Maven', 'Jenkins', 'JIRA', 'Confluence'],
+      items: ['Jenkins', 'Maven', 'Agile', 'JIRA', 'Confluence', 'Git', 'GitHub'],
     },
     {
       title: 'Databases',
-      items: ['PostgreSQL', 'MySQL', 'SQL Server'],
+      items: ['MySQL', 'Oracle', 'PostgreSQL', 'MongoDB'],
     },
     {
       title: 'Cloud & Deployment',
-      items: ['AWS (EC2, S3)', 'Docker', 'CI/CD Pipelines'],
+      items: ['Azure', 'GCP', 'Docker', 'AWS (S3, EC2)', 'CI/CD Pipelines'],
     },
   ];
 
-  const services = [
-    { icon: <FaCode className="text-xl text-accent" />, text: 'Web Development' },
-    { icon: <FaChartLine className="text-xl text-accent" />, text: 'Data Analysis' },
-    { icon: <FaBug className="text-xl text-accent" />, text: 'Automation & Manual Testing' },
-    { icon: <FaCloud className="text-xl text-accent" />, text: 'Cloud Deployment' },
-    { icon: <FaTools className="text-xl text-accent" />, text: 'Full-Stack App Building' },
-  ];
-
   return (
-    <section
-      id="skills"
-      className="min-h-screen px-4 py-12 scroll-mt-32 bg-white dark:bg-[#0B0C10] text-gray-900 dark:text-white"
-    >
+    <section id="skills" className="min-h-screen px-6 py-16 bg-white text-black">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10">
         {/* Left: What I Can Do */}
-        <div className="md:w-5/12 space-y-6">
-          <h2 className="text-sm font-bold text-accent mb-4">💼 What I Can Do</h2>
-          <div className="space-y-4">
+        <div className="md:w-4/12 space-y-6">
+          <h2 className="text-base font-bold text-emerald-600 mb-2"> Look What I Can Do</h2>
+          <div className="space-y-3">
             {services.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-3 text-xs font-medium p-3 rounded-lg border border-accent bg-white dark:bg-base shadow hover:scale-105 transition-transform"
+                className="flex items-center gap-2 text-sm font-medium p-3 border border-emerald-500 rounded-md bg-white shadow hover:scale-[1.02] transition"
               >
                 {item.icon}
                 <TypeAnimation
@@ -58,26 +63,33 @@ function Skills() {
                   wrapper="span"
                   speed={50}
                   repeat={Infinity}
-                  className="text-xs text-gray-800 dark:text-gray-200"
+                  className="text-sm text-gray-800"
                 />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right: Skills Section */}
-        <div className="md:w-7/12">
-          <h2 className="text-lg font-bold text-accent mb-6 text-center md:text-left">🛠 Skills</h2>
-          <div className="grid gap-4 md:grid-cols-2">
-            {skillGroups.map((group) => (
+        {/* Right: Skills Grid */}
+        <div className="md:w-8/12">
+          <h2 className="text-lg font-bold text-emerald-600 mb-6 text-center md:text-left">My  Skill Page</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {skillGroups.map((group, index) => (
               <div
-                key={group.title}
-                className="p-4 rounded-xl border border-accent bg-gray-50 dark:bg-base shadow hover:shadow-md transition-all"
+                key={index}
+                className="p-4 border border-emerald-500 bg-white shadow-sm rounded-md flex flex-col h-full"
               >
-                <h3 className="text-sm font-bold text-accent mb-2">{group.title}</h3>
-                <ul className="space-y-1 text-left text-xs text-gray-800 dark:text-gray-200">
-                  {group.items.map((skill) => (
-                    <li key={skill}>• {skill}</li>
+                <div className="bg-emerald-600 text-white text-sm font-semibold px-3 py-2">
+                  {group.title}
+                </div>
+                <ul className="flex flex-wrap gap-2 mt-4 text-sm">
+                  {group.items.map((item) => (
+                    <li
+                      key={item}
+                      className="bg-gray-100 text-black px-3 py-1 rounded-full border border-gray-300 text-xs"
+                    >
+                      {item}
+                    </li>
                   ))}
                 </ul>
               </div>

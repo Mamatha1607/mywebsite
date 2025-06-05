@@ -2,43 +2,45 @@ function About() {
   return (
     <section
       id="about"
-      className="min-h-screen px-6 py-20 bg-white dark:bg-base text-gray-900 dark:text-white flex flex-col md:flex-row items-center justify-between gap-12"
+      className="relative min-h-screen bg-white flex items-center justify-center px-4 sm:px-6 py-12 overflow-hidden"
     >
-      {/* Text Content */}
-      <div className="md:w-7/12 flex flex-col justify-center h-full text-left">
-        <h2 className="text-2xs md:text-1xs font-bold mb-8 text-accent">About Me</h2>
-        <p className="text-lg md:text-3xs text-gray-700 dark:text-gray-300 leading-relaxed">
-          I’m Mamatha Iruvaram, an aspiring developer with a curious mind and a problem-solving heart.
-          I enjoy building full stack applications that are not only functional but thoughtful systems
-          that solve real problems and deliver real value.
+      {/* 💚 Background Emerald Circles */}
+      <div className="absolute w-72 h-72 bg-emerald-500 rounded-full opacity-30 top-[-80px] left-[-80px] z-0"></div>
+      <div className="absolute w-56 h-56 bg-emerald-500 rounded-full opacity-30 top-[60%] left-[10%] z-0"></div>
+      <div className="absolute w-96 h-96 bg-emerald-500 rounded-full opacity-30 bottom-[-120px] right-[-100px] z-0"></div>
+      <div className="absolute w-48 h-48 bg-emerald-500 rounded-full opacity-30 bottom-[20%] right-[15%] z-0"></div>
+      <div className="absolute w-80 h-80 bg-emerald-500 rounded-full opacity-30 top-1/4 left-[calc(50%-24rem)] z-0"></div>
 
-          <br /><br />
+      {/* 🧱 Main Content Box */}
+      <div className="relative z-10 bg-white shadow-md w-full max-w-3xl flex flex-col md:flex-row items-stretch overflow-hidden border border-gray-200">
+        
+        {/* Left: Text Content */}
+        <div className="w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-center max-w-2xl mx-auto">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 text-center md:text-left">
+            About Me
+          </h2>
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            I’m Mamatha Iruvaram, a full stack developer with a love for clean code, creative problem solving, and building things that actually work.
+            <br /><br />
+            I earned my Master’s in Information Systems from George Mason University and bring over two years of hands-on experience as a developer, working on scalable web applications in production environments.
+            <br /><br />
+            I enjoy turning ideas into functional products, from building user interfaces to testing backend systems. I approach every project with curiosity, focus, and a mindset to keep learning and improving.
+            <br /><br />
+            I believe good software should not only work well, but be thoughtfully built.
+          </p>
+        </div>
 
-          With a background in Computer Science Engineering and a Master’s in Information Systems from George Mason University,
-          I’ve explored development, testing, and data analytics to understand how technology works from every angle.
-
-          <br /><br />
-
-          I believe in writing clean code, asking the right questions, and never settling for quick fixes.
-          Whether I am developing a dynamic web application, ensuring quality through test automation,
-          or uncovering patterns in data, I approach every project with intention and clarity.
-
-          <br /><br />
-
-          I am currently strengthening my skills across full stack development, test automation, and data analytics,
-          always eager to build reliable systems, uncover insights, and deliver clean, scalable solutions.
-        </p>
+        {/* Right: Profile Image */}
+        <div className="w-full md:w-1/2">
+  <div className="w-full h-full md:h-[100%]">
+    <img
+      src={`${import.meta.env.BASE_URL}Mamatha.jpg`}
+      alt="Mamatha Iruvaram"
+      className="w-full h-full object-cover"
+    />
+  </div>
+  </div>
       </div>
-
-      {/* Profile Image */}
-      <div className="md:w-5/12 flex justify-center items-center h-full">
-  <img
-    src={`${import.meta.env.BASE_URL}Mamatha.jpg`} // ✅ case-sensitive!
-    alt="Mamatha Iruvaram"
-    className="w-60 h-60 md:w-80 md:h-80 object-cover rounded-lg border-2 border-accent 
-               shadow-[0_0_40px_rgba(102,252,241,0.6)] animate-pulse-glow"
-  />
-</div>
     </section>
   );
 }

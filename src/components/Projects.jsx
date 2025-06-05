@@ -1,107 +1,80 @@
-import { useState } from 'react';
-import { FaGithub } from 'react-icons/fa';
-
-const projects = [
-  {
-    title: 'Loyalty Program Management System',
-    tech: 'Java, Spring Boot, JSP, MySQL, Android',
-    link: 'https://github.com/Mamatha1607/CustomerLoyaltySystem-Java-Android.git',
-    bullets: [
-      'Rewards system backend with Oracle DB.',
-      'Android app for 1,000+ users.',
-      '20% faster APIs, 25% faster queries.',
-    ],
-  },
-  {
-    title: 'Automated E-Commerce Testing',
-    tech: 'Selenium, TestNG, Java, Jenkins',
-    link: null,
-    bullets: [
-      'Tested flows: login, cart, checkout.',
-      'CI/CD integration with reporting.',
-      'Reduced regression effort by 70%.',
-    ],
-  },
-  {
-    title: 'Collaborative Task Manager',
-    tech: 'React.js, Node.js, PostgreSQL, JWT',
-    link: 'https://github.com/Mamatha1607/Taskmanager.git',
-    bullets: [
-      'Full-stack CRUD task app.',
-      'JWT auth for 100+ users.',
-      'Latency improved by 30%.',
-    ],
-  },
-  {
-    title: 'Student Survey Application',
-    tech: 'Angular, Spring Boot, AWS, MySQL',
-    link: 'https://github.com/Mamatha1607/A-Full-Stack-Student-Survey-Application.git',
-    bullets: [
-      'Survey app with Angular UI.',
-      'Handled 5,000+ secure responses.',
-      '35% faster data access, 99.9% uptime.',
-    ],
-  },
-  {
-    title: 'Customer Churn Prediction',
-    tech: 'Python, Scikit-learn, Pandas, Seaborn',
-    link: null,
-    bullets: [
-      'Logistic regression with 82% accuracy.',
-      'Processed 7,000+ customer records.',
-      'Identified top churn factors.',
-      'Training time cut by 40%.',
-      'Visualized churn patterns.',
-    ],
-  },
-];
-
 function Projects() {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleCard = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const projects = [
+    {
+      title: 'Customer Loyalty Program',
+      image: 'loyalty.png',
+      description: 'Manage customer loyalty points and rewards efficiently.',
+      stack: ['Java', 'Spring Boot', 'JSP', 'MySQL', 'Android'],
+      github: 'https://github.com/Mamatha1607/CustomerLoyaltySystem-Java-Android',
+    },
+    {
+      title: 'E-Commerce Testing',
+      image: 'ecommerce.png',
+      description: 'Automation testing for an e-commerce platform.',
+      stack: ['Selenium', 'TestNG', 'Java', 'Maven', 'Jenkins'],
+    },
+    {
+      title: 'Task Manager App',
+      image: 'Taskmanager.png',
+      description: 'A secure task manager built with React and Node.js.',
+      stack: ['React', 'Node.js', 'PostgreSQL', 'Express', 'JWT'],
+      github: 'https://github.com/Mamatha1607/Taskmanager',
+    },
+    {
+      title: 'Student Survey App',
+      image: 'survey.png',
+      description: 'A full-stack survey platform deployed on the cloud.',
+      stack: ['Angular', 'Spring Boot', 'MySQL', 'AWS', 'Azure'],
+      github: 'https://github.com/Mamatha1607/A-Full-Stack-Student-Survey-Application',
+    },
+  ];
 
   return (
-    <section
-      id="projects"
-      className="min-h-screen px-4 py-12 scroll-mt-32 bg-gray-50 dark:bg-[#1F2833] text-center"
-    >
-      <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8">
-        Projects
-      </h2>
+    <section id="projects" className="min-h-screen px-4 py-12 bg-white text-black">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl font-bold text-center text-emerald-600 mb-8"> Projects I've Built</h2>
 
-      <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
-        {projects.map((project, index) => (
-          <div
-            key={project.title}
-            className="p-4 rounded-xl border border-accent bg-white dark:bg-base shadow-md cursor-pointer hover:shadow-[0_0_20px_#66FCF1] transition-all"
-            onClick={() => toggleCard(index)}
-          >
-            <h3 className="text-sm font-semibold text-accent mb-1">{project.title}</h3>
-            <p className="text-xs text-gray-700 dark:text-gray-300 mb-2 italic">{project.tech}</p>
-            {openIndex === index && (
-              <ul className="text-left space-y-1 text-gray-800 dark:text-gray-200 text-xs mb-3">
-                {project.bullets.map((point, i) => (
-                  <li key={i}>• {point}</li>
-                ))}
-              </ul>
-            )}
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-accent text-xs font-medium hover:underline"
-              >
-                <FaGithub className="text-base" /> View Code
-              </a>
-            )}
-          </div>
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="border border-emerald-500 rounded-md shadow-sm hover:shadow-md transition bg-white"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-32 object-cover rounded-t-md"
+              />
+              <div className="p-3">
+                <h3 className="text-sm font-bold text-emerald-700">{project.title}</h3>
+                <p className="text-xs text-gray-700 mt-1 mb-2">{project.description}</p>
+                <div className="flex flex-wrap gap-1 text-[10px] mb-2">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-gray-100 border border-gray-300 px-2 py-0.5 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] text-emerald-600 font-semibold underline"
+                  >
+                    View Code →
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+
 export default Projects;

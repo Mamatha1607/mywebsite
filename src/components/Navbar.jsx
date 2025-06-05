@@ -6,72 +6,68 @@ import {
   EnvelopeIcon,
   BriefcaseIcon,
 } from '@heroicons/react/24/outline';
+import { useState } from 'react';
+import { HiMenuAlt3, HiX } from 'react-icons/hi';
 
 function Navbar() {
+  const [showMenu, setShowMenu] = useState(true); // Sidebar visible by default
+
   return (
-<<<<<<< HEAD
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-[#0B0C10]/90 backdrop-blur border-b-4 border-teal shadow-[0_0_30px_#45A29E]">
-      <div className="w-full flex justify-between items-center px-4 md:px-12 py-6 text-2xl md:text-2xl">
-        
-        {/* Logo on the absolute left */}
-        <div className="flex items-center space-x-4">
-          <div className="ml-0 w-12 h-12 transform rotate-45 border-2 border-accent flex items-center justify-center">
-            <span className="transform -rotate-45 text-accent font-extrabold text-lg tracking-wide neon-text">
-              MI
-            </span>
-          </div>
-          <h1 className="text-2xl font-extrabold text-gray-800 dark:text-white tracking-wide">
-           
-          </h1>
-=======
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-[#0B0C10]/90 backdrop-blur border-b-2 border-teal shadow-md">
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center px-2 sm:px-4 py-3 text-xs">
+    <>
+      {/* Toggle Button (always visible) */}
+      <button
+        className="fixed top-4 left-4 z-50 text-white bg-black p-2 rounded-md shadow"
+        onClick={() => setShowMenu(!showMenu)}
+      >
+        <HiMenuAlt3 className="w-6 h-6" />
+      </button>
 
-        {/* Logo at the extreme left */}
-        <div className="flex items-center">
-          <div className="w-8 h-8 transform rotate-45 border border-accent flex items-center justify-center">
-            <span className="transform -rotate-45 text-accent font-bold text-[10px] tracking-tight neon-text">
-              MI
-            </span>
-          </div>
->>>>>>> cc61877 (Updated Projects section with flashcard functionality)
-        </div>
+      {/* Sidebar */}
+      {showMenu && (
+        <nav className="fixed top-0 left-0 h-full w-64 bg-black text-white z-40 shadow-lg transition-all">
+          <div className="flex flex-col px-4 py-6 space-y-8 h-full overflow-y-auto">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowMenu(false)}
+              className="self-end text-white text-lg hover:text-gray-400"
+            >
+              <HiX className="w-6 h-6" />
+            </button>
 
-        {/* Navigation Links */}
-        <ul className="flex flex-wrap space-x-2 sm:space-x-3 md:space-x-4 font-medium text-gray-700 dark:text-gray-300 text-xs">
-          <li>
-            <a href="#home" className="flex items-center gap-1 hover:text-accent">
-              <HomeIcon className="w-4 h-4" /> Home
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="flex items-center gap-1 hover:text-accent">
-              <UserIcon className="w-4 h-4" /> About
-            </a>
-          </li>
-          <li>
-            <a href="#skills" className="flex items-center gap-1 hover:text-accent">
-              <WrenchScrewdriverIcon className="w-4 h-4" /> Skills
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="flex items-center gap-1 hover:text-accent">
-              <CodeBracketIcon className="w-4 h-4" /> Projects
-            </a>
-          </li>
-          <li>
-            <a href="#experience" className="flex items-center gap-1 hover:text-accent">
-              <BriefcaseIcon className="w-4 h-4" /> Experience
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="flex items-center gap-1 hover:text-accent">
-              <EnvelopeIcon className="w-4 h-4" /> Contact
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+            {/* Logo and Name */}
+            <div className="flex flex-col items-center space-y-2">
+              <div className="w-12 h-12 rounded-full border border-white flex items-center justify-center">
+                <span className="font-bold text-sm">MI</span>
+              </div>
+              <span className="text-base font-semibold text-white">Mamatha</span>
+            </div>
+
+            {/* Nav Links */}
+            <ul className="flex flex-col space-y-5">
+              {[
+                { href: '#home', icon: HomeIcon, label: 'Home' },
+                { href: '#about', icon: UserIcon, label: 'About' },
+                { href: '#skills', icon: WrenchScrewdriverIcon, label: 'Skills' },
+                { href: '#projects', icon: CodeBracketIcon, label: 'Projects' },
+                { href: '#experience', icon: BriefcaseIcon, label: 'Experience' },
+                { href: '#contact', icon: EnvelopeIcon, label: 'Contact' },
+              ].map(({ href, icon: Icon, label }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    onClick={() => setShowMenu(false)} // Optional: auto-close
+                    className="flex items-center gap-3 px-3 py-2 rounded border border-transparent hover:border-white transition"
+                  >
+                    <Icon className="w-5 h-5" />
+                    <span>{label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+      )}
+    </>
   );
 }
 
