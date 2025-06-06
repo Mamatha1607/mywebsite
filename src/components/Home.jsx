@@ -64,7 +64,7 @@ function Home() {
               Say hi on LinkedIn
             </h3>
             <a
-              href="https://www.linkedin.com/in/mamatha-iruvaram/"
+              href="//www.linkedin.com/in/mamathairuvaram/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm hover:text-emerald-700 transition"
