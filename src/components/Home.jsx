@@ -38,7 +38,7 @@ function Home() {
         {/* Resume Button */}
         <div className="flex gap-4">
           <a
-            href="/MamathaIruvaram.pdf"
+            href="https://mamatha1607.github.io/mywebsite/MamathaIruvaram.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-emerald-500 text-white px-4 py-2 rounded hover:bg-emerald-600 transition"
