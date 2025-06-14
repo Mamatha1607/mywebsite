@@ -1,15 +1,15 @@
 function Experience() {
   const experiences = [
     {
-      title: 'Programmer Analyst — Cognizant',
+      title: 'Software Engineer - Cognizant',
       date: 'Dec 2021 – Jul 2023 | India',
       points: [
-        'Designed and maintained automated test frameworks using Selenium WebDriver, JUnit, and Java, automating over 300+ test cases and ensuring high quality assurance across multiple enterprise applications.',
-        'Developed and debugged backend systems and APIs in Java, handling over 100K requests per day and optimizing response time by 30%, contributing to scalable enterprise-grade solutions.',
-        'Implemented continuous testing into DevOps pipelines with Jenkins, Maven, and GitHub, improving automated build/test cycles and reducing manual intervention by 70%.',
-        'Collaborated with Agile Scrum teams over 20+ sprints, contributing to sprint planning, backlog refinement, and release readiness through detailed defect tracking and root cause analysis in JIRA.',
-        'Worked closely with cross-functional teams to validate product lifecycle stages and align testing strategies to evolving business requirements.',
-        'Actively communicated with development, QA, and management teams, leveraging interpersonal skills to ensure clear reporting on test results, defect priorities, and quality status.',
+        'Developed and maintained RESTful APIs using Java and Spring Boot and Maven supporting 5,000+ daily users and increasing system efficiency by 30% through backend optimization.',
+        'Built interactive, responsive UI components with React.js, JavaScript and Typescript leading to a 20% increase in user engagement and positive stakeholder feedback.',
+        'Optimized database queries and schemas in MySQL and PostgreSQL, accelerating data retrieval by 25% and enabling seamless scaling for larger datasets.',
+        'Utilized Jenkins for CI/CD automation and Postman for API testing, streamlining the build, deployment, and validation process across environments.',
+        'Tracked issues and managed sprints in Jira, contributing to timely project delivery and effective Agile collaboration.',
+        'Delivered multiple product releases in Agile teams by leading code reviews and onboarding 2+ junior developers, reducing post-release defects and boosting team productivity.',
       ],
     },
   ];
