@@ -29,7 +29,7 @@ function Projects() {
     },
     {
   title: 'Connectly - Real-Time Chat App',
-  image: 'connectly.png',
+  image: 'Connectly.png',
   description: 'A real-time group chat application supporting public/private rooms, user authentication, themed chat UI, and join request handling.',
   stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO', 'JWT', 'Tailwind CSS'],
   github: 'https://github.com/Mamatha1607/connectly-group-chat-application.git',
